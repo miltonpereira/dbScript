@@ -27,8 +27,7 @@ for row in name:
 out.close()
 
   	
-
-  
+ 
 
 cursor.close()
 cnx.close()
