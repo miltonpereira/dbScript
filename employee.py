@@ -18,16 +18,15 @@ for fname,lname in cursor:
 
 
 out = open('out.csv', 'w')
+writer = csv.DictWriter(out, fieldnames = ["First Name", "Last Name"])
+writer.writeheader()
+
 for row in name:
-    for column in row:
-    	print (row)
-    	print (column)
-    	out.write(column)
-    out.write('\n')
+	writer.writerow({'First Name': row[0], 'Last Name': row[1]})
+	out.write('\n')
 out.close()
 
-  	
- 
+  
 
 cursor.close()
 cnx.close()
